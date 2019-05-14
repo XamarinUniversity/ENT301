@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+    <title>Exercise 1: Register for a Developer account</title>
+    <link rel="stylesheet" type="text/css" href="./res/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./res/styles/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="./res/styles/styles.css">
+</head>
+
+<body>
+    <!-- Use the same title as the StartHere -->
+    <header>Salesforce Concepts and Architecture</header>
+
+    <section id="main">
+
+        <h1 id="page-title"></h1>
+        
+        <!-- -------------------------------------------------------------------------------------------------- -->
+
+        <h2>Duration</h2>
+        <p>15 minutes</p>
+
+        <div class="hintblock">
+            <strong>Tip:</strong> If you are doing this exercise live in a session, make sure to make good use of the
+			instructor, they are online to answer any questions you have!
+        </div>
+
+        <!-- -------------------------------------------------------------------------------------------------- -->
+
+        <h2>Goals</h2>        
+        <p>
+	        The goal of this lab is to register with Salesforce for a 
+			<a target="_blank" href="https://help.salesforce.com/apex/HTViewHelpDoc?id=overview_de.htm">
+			Developer Edition Environment</a> account. 
+			The registration process will automatically create several 
+			<a target="_blank" href="http://www.salesforce.com/us/developer/docs/api/Content/sforce_api_objects_list.htm">Standard Objects</a> 
+			(i.e. tables) and populate
+			many of them with sample data; you will use the Salesforce web interface to explore this data.
+        </p>
+
+        <!-- -------------------------------------------------------------------------------------------------- -->
+
+        <h1>Steps</h1>
+        <p>
+            Below are the step-by-step instructions to implement the exercise.
+        </p>
+
+        <h2>Register for an account</h2>
+        <p>
+			Here you will register for a Salesforce account.  
+			Note that the email address you use during registration becomes your Salesforce
+			username. It is difficult to delete a Salesforce account/username once created so you
+			might want to use a secondary email address to register while you are learning.
+        </p>
+        <ol>
+            <li>
+				Open a web browser and navigate to the
+				<a target="_blank" href="https://developer.salesforce.com/signup">registration page</a>.
+            </li>
+
+			<li>
+				Complete the registration form.
+			</li>
+			<li>
+				Check your email for the Salesforce confirmation message. Click the link in the email
+				to complete the registration process.
+			</li>
+			<li>
+				Record your username and password for future use.
+			</li>
+        </ol>
+
+        <h2>Examine the data in your account</h2>
+        <p>
+			Your goal is to work with the sample data that was automatically incorporated into your
+			Environment when you registered for your account. You will view the records in an Object,
+			modify the data in an existing record, and create a new record.
+        </p>
+        <ol>
+            <li>
+				Open a web browser and <a target="_blank" href="https://login.salesforce.com">login</a> to
+				your Salesforce account.
+            </li>
+
+			<li>	
+				After login, you should be on the <strong>Setup</strong> page. This page contains the main navigation
+				links in the left-hand column. In the upper-right corner of the page header there should be a link
+				labeled "Setup" that you can use to return to this page from anywhere in your account.
+            </li>
+
+			<li>
+				The upper-right corner of the page header also contains the <strong>App Menu</strong>.
+				By default, you are likely viewing the <strong>Sales</strong> app. If you are not, 
+				select the <strong>Sales</strong> app from the menu.				
+			</li>
+
+			<li>
+				You should see a list of tabs arranged across the top of the main content area.
+				Click on the <strong>Accounts</strong> tab. This tab provides a web UI for the
+				Standard Object named <strong>Account</strong>, it was automatically created
+				and populated with sample data when you registered with Salesforce. Note that
+				"account" here means "customer" and not "user".
+			</li>
+
+			<li>
+				Use the drop-down list at the top of the Account page to select and view "All Accounts".	 
+			</li>
+
+			<li>
+				[Optional] Edit an account of your choice (e.g. change the number of employees). Save your changes.
+			</li>
+
+			<li>
+				[Optional] Click the <strong>New Account</strong> button near the top of the page to add a new record
+				to the <strong>Account</strong> Object. Be sure to assign a value to the required
+				<strong>Account Name</strong> field (the other fields are optional).
+				Each record also has an <strong>Id</strong> that will act as the primary key.
+				The <strong>Id</strong> value is generated automatically and is not shown in the web interface.
+				Save your changes and then select the "All Accounts" view again to verify your new record is there.
+			</li>
+
+			<li>
+				[Optional] If you have time, continue to explore the Standard Objects. The <strong>Contacts</strong>
+				and <strong>Products</strong> objects both contain sample data.
+			</li>
+        </ol>
+
+        <!-- -------------------------------------------------------------------------------------------------- -->
+
+        <h1>Summary</h1>
+        <p>
+			In this exercise, you registered with Salesforce and explored the data in your Environment.
+			The Standard Objects and sample data help you get started as a developer since the table
+			and field names are all standardized. This makes it easy to find sample code and discussions
+			online because many other developers have written code to access that same data.
+        </p>
+
+        <!-- -------------------------------------------------------------------------------------------------- -->
+
+        <div class="align-right">
+            <a href="../index.html">Go Back</a>
+        </div>
+
+    </section>
+
+    <script src="./res/js/jquery.min.js"></script>
+    <script src="./res/js/prettify.js"></script>
+    <script src="./res/js/script.js"></script>
+
+    <footer>Copyright (C) 2018 Xamarin Inc., Microsoft.</footer>
+</body>
+</html>

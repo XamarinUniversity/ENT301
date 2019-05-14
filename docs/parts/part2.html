@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+    <title>Exercise 2: Create a Custom Object</title>
+    <link rel="stylesheet" type="text/css" href="./res/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./res/styles/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="./res/styles/styles.css">
+</head>
+
+<body>
+    <!-- Use the same title as the StartHere -->
+    <header>Salesforce Concepts and Architecture</header>
+
+   	<section id="main">
+
+		<h1 id="page-title"></h1>
+
+        <!-- -------------------------------------------------------------------------------------------------- -->
+
+		<h2>Duration</h2>
+		<p>15 minutes</p>
+
+		<div class="hintblock">
+			<strong>Tip:</strong> If you are doing this exercise live in a session, make sure to make good use of the
+			instructor, they are online to answer any questions you have!       
+		</div>
+
+        <!-- -------------------------------------------------------------------------------------------------- -->
+
+		<h2>Goals</h2>
+		<p>
+			You will first register a custom Namespace Prefix to give your Custom Objects a unique identity within Salesforce. 
+			After that, you will create a Custom Object (i.e. table) with a Custom Field.
+			At the end of the exercise, you will have everything you need to write queries against your Custom Object:
+			Namespace Prefix, Object name, and Field name.       
+		</p>
+
+        <!-- -------------------------------------------------------------------------------------------------- -->
+
+        <h1>Steps</h1>
+        <p>
+            Below are the step-by-step instructions to implement the exercise.
+        </p>
+
+        <h2>Register your Namespace Prefix</h2>
+        <p>
+			In this section, you will
+			<a target="_blank" href="https://help.salesforce.com/apex/HTViewHelpDoc?id=register_namespace_prefix.htm">
+			register a Namespace Prefix</a>.
+			Your Namespace Prefix must be unique across Salesforce. If you are creating this Prefix for production use,
+			you should take a moment to consider your choice carefully because it cannot be changed after creation.
+        </p>
+        <ol>
+            <li>
+				Open a web browser and <a target="_blank" href="https://login.salesforce.com">login</a> to
+				your Salesforce account.
+            </li>
+
+            <li>
+				Verify that you are on the <strong>Setup</strong> page. You should see a navigation menu on the
+				left side containing headings like <strong>Administer</strong>, <strong>Build</strong>,
+				<strong>Deploy</strong>, etc. If you do not see this menu, click on the <strong>Setup</strong>
+				link in the upper-right corner of the page header.
+            </li>
+
+			<li>
+				In the left-side menu, navigate to <strong>Build &gt; Create &gt; Packages</strong>.
+			</li>
+
+			<li>
+				In the <strong>Developer Settings</strong> section of the main content area of the page, click on the 
+				<strong>Edit</strong> button. Follow the instructions to register your Namespace Prefix.
+			</li>
+
+			<li>
+				[Optional] Record your Namespace Prefix somewhere so you will have it available later if you decide
+				to write queries against a Custom Object.
+			</li>
+	    </ol>
+
+        <h2>Create a Custom Object</h2>
+        <p>
+			Here you will <a target="_blank" href="https://developer.salesforce.com/page/Create_a_custom_object">
+			create a Custom Object</a> inside your Salesforce Environment. Recall that Salesforce uses the term
+			<em>Object</em> instead of <em>table</em> so here you are creating a custom
+			table. These instructions recommend you create an Object named <strong>Song</strong> to store
+			information about musical songs; however, you are welcome to create an Object that is more
+			realistic for your business if you prefer.
+        </p>
+        <ol>
+            <li>
+				From the Salesforce <strong>Setup</strong> page, navigate to <strong>Build &gt; Create &gt; Objects</strong>.
+            </li>
+			<li>
+				In the <strong>Custom Objects</strong> section of the main content area of the page, click on the 
+				<strong>New Custom Object</strong> button. Follow the steps to create a Custom Object
+				named <strong>Song</strong>. You should only need to enter values for the <strong>Label</strong>
+				(use "Song") and the <strong>Plural Label</strong> (use "Songs"); the default values are
+				acceptable for the remaining items.
+			</li>
+				
+			<li>
+				Click the <strong>Save</strong> button at the bottom of the page when you have finished the steps. 
+			</li>
+
+			<li>
+				After saving, the <strong>Custom Object Definition Detail</strong> page should load and display
+				all the settings for the <strong>Song</strong> Object.
+				Take a moment to examine the
+				<a target="_blank" href="http://www.salesforce.com/developer/docs/api/Content/system_fields.htm">
+				System Fields</a>
+				(called <strong>Standard Fields</strong> on the <strong>Custom Object Definition Detail</strong> page).
+				These fields were added automatically to your Custom Object. There is also an 
+				<a target="_blank" href="http://www.salesforce.com/developer/docs/api/Content/field_types.htm#i1435616">Id field</a>
+				that serves as the primary key but is not shown in the web interface.
+			</li>
+			
+			<li>
+				[Optional] Locate the <strong>API Name</strong> entry on the page and record it somewhere so you
+				will have it available later if you decide to write queries against this Custom Object.
+			</li>
+	    </ol>
+
+        <h2>Create a Custom Field</h2>
+        <p>
+			Here you will <a target="_blank" href="https://help.salesforce.com/apex/HTViewHelpDoc?id=adding_fields.htm">
+			create a Custom Field</a> inside your Custom Object. These instructions recommend you create a Field named
+			<strong>Title</strong> inside the <strong>Song</strong> Object to store the title of a musical song;
+			however, you are welcome to create a Field that is more realistic for your business if you prefer.
+        </p>
+        <ol>
+			<li>
+				Begin on the <strong>Custom Object Definition Detail</strong> page for your <strong>Song</strong> 
+				Custom Object. If you are not on this page, you can get to it from the Salesforce <strong>Setup</strong> page.
+				From <strong>Setup</strong>, navigate to <strong>Build &gt; Create &gt; Objects</strong>.
+				In the <strong>Custom Objects</strong> section of the main content area of the page, click on the 
+				<strong>Label</strong> for the <strong>Song</strong> Custom Object.
+			</li>
+
+            <li>
+				Locate the <strong>Custom Fields & Relationships</strong> section and click on the <strong>New</strong>
+				button.
+            </li>
+
+            <li>
+				Follow the steps to create a Custom Field with the following characteristics:
+				<ul>
+					<li>Set its <strong>Type</strong> to <strong>Text</strong></li>
+					<li>Set its <strong>Field Label</strong> to <strong>Title</strong></li>
+					<li>Set its <strong>Length</strong> to <strong>100</strong></li>
+					<li>Set its <strong>Field Name</strong> to <strong>Title</strong>.</li>
+				</ul>
+				You can accept the default values for all other attributes.
+			</li>
+
+			<li>
+				[Optional] After saving, the <strong>Custom Object Definition Detail</strong> page should load.
+				In the <strong>Custom Fields & Relationships</strong> section, locate the <strong>API Name</strong>
+				for the <strong>Title</strong> field and record it somewhere so you will have it available later if
+				you decide to write queries against this Custom Object.
+			</li>
+
+	    </ol>
+
+        <!-- -------------------------------------------------------------------------------------------------- -->
+
+		<h1>Summary</h1>
+		<p>
+			This section let you build Custom Objects and Custom Fields which are the core things you will create
+			to store your business's data in Salesforce.
+
+			It also showed you how to find the strings you will need to include in your queries when you write
+			code to access your Custom Objects: Namespace Prefix, Object API name, and Field API name.
+		</p>
+
+        <!-- -------------------------------------------------------------------------------------------------- -->
+
+		<div class="align-right">
+			<a href="../index.html">Go Back</a>
+		</div>
+	</section>
+
+    <script src="./res/js/jquery.min.js"></script>
+    <script src="./res/js/prettify.js"></script>
+    <script src="./res/js/script.js"></script>
+
+    <footer>Copyright (C) 2018 Xamarin Inc., Microsoft.</footer>
+</body>
+</html>
